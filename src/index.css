@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  /* Pimary font */
+  --font-primary: "Poppins", "sans-serif";
+  --font-secondary: "Onest", "serif";
+
+  /* Primary color */
+  --color-primary: #110051;
+  --color-seconday: #3f9fef;
+  /* ... */
+}
+
+/* Global stylesheet  */
