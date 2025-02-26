@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const FeaturesData = [
   {
     id: 1,
@@ -23,10 +25,12 @@ const FeaturesData = [
 ];
 
 function HomeCards() {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <section className="py-16 px-6 bg-[#FFFFFF] lg:w-7xl mx-auto">
       {/* Header Section */}
-      <div className="max-w-lg mx-auto text-center">
+      <div className="max-w-lg mx-auto px-2 text-center">
         <h2 className="text-3xl lg:text-[40px] font-bold text-[#202020]">
           Benefits of Text2SQL
         </h2>
@@ -41,9 +45,14 @@ function HomeCards() {
         {FeaturesData.map((feature) => (
           <div
             key={feature.id}
-            className="bg-[#F1F4FF] py-6 px-10 rounded-lg shadow-md border group border-gray-200 transition-all duration-300 hover:bg-[#2E58F1] lg:w-[384px]"
+            className={`py-5 px-5 rounded-lg shadow-md border group border-gray-200 transition-all duration-300  lg:w-[384px] ${
+              isHovered ? "hover:bg-[#2E58F1]" : "bg-[#F1F4FF]"
+            }`}
+            onClick={() => setIsHovered(!isHovered)} // Tap to toggle hover effect on mobile
+            onMouseEnter={() => setIsHovered(true)} // For desktop hover
+            onMouseLeave={() => setIsHovered(false)} // For desktop hover out
           >
-            <div className="flex flex-col items-start group-hover:text-[#ffffff] gap-3 lg:gap-5">
+            <div className="flex flex-col items-start group-hover:text-[#ffffff] group-hover:border-amber-50 gap-3 lg:gap-5">
               <img src={feature.icon} alt="" />
 
               <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#ffffff]">

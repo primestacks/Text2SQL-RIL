@@ -9,7 +9,7 @@ function HeroHome() {
           className="lg:absolute lg:block hidden lg:left-5 lg:group-hover:left-[-40px] transition-all z-0 duration-800 "
         />
 
-        <div className="absolute z-50 lg:max-w-2xl  text-center bg-secondary backdrop-blur-3xl opacity-95 p-2 lg:m-2 rounded-lg lg:rounded-[50px] lg:border lg:border-seconday-500 py-3 ">
+        <div className="absolute z-50 lg:max-w-2xl  text-center bg-secondary backdrop-blur-3xl opacity-95 p-5 lg:m-2 rounded-lg lg:rounded-[50px] lg:border lg:border-seconday-500 py-3 ">
           <p className="my-5 sm:block text-sm md:text-lg">
             <img
               src="./assets/Frame 222.svg"

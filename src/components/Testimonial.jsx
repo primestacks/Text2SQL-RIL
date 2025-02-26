@@ -19,6 +19,14 @@ const testimonials = [
     quote:
       "This tool has transformed how we access our data. It's like having a data expert on hand 24/7. We saved hours each week by asking simple questions instead of writing complex queries",
   },
+  {
+    id: 3,
+    image: "./assets/testimonial-one.svg",
+    name: "Becky Nelson",
+    title: "Cloud Engineer",
+    quote:
+      "This tool has transformed how we access our data. It's like having a data expert on hand 24/7. We saved hours each week by asking simple questions instead of writing complex queries",
+  },
 ];
 
 function Testimonial() {
@@ -43,48 +51,56 @@ function Testimonial() {
   };
 
   return (
-    <section className="relative  bg-[#F1F4FF] px-6 py-20 text-center z-0">
-      <div className="mx-w-sm py-10 mb-20">
+    <section className="relative  bg-[#F1F4FF] px-5 py-20 sm:py-15min-h-screen">
+      <div className="max-w-sm py-5 mb-20 mx-auto text-center">
         <h1 className="text-3xl font-bold py-3">Testimonials</h1>
         <p>Real stories from satisfied users, word from our valued users</p>
       </div>
 
-      <div className="relative mx-auto min-h-[350px] w-full max-w-3xl bg-white shadow-lg rounded-lg p-6">
+      <div className="relative w-full  h-[450px]  ">
         {/* Testimonials Slider */}
         <AnimatePresence>
-          <motion.div
-            key={testimonials[current].id}
-            className="flex items-center space-x-6"
-            // initial={{ opacity: 0, x: 50 }}
-            // animate={{ opacity: 1, x: 0 }}
-            // exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.5 }}
-          >
-            {/* Image */}
-            <motion.img
-              src={testimonials[current].image}
-              alt={testimonials[current].name}
-              className=" object-cover w-[250px] rounded shadow-lg absolute bottom-0 top-[-20] z-50 overflow-auto"
-              // animate={{ scale: 1 }}
-              // transition={{ duration: 0.5 }}
-            />
+          {testimonials.map((testimonial, index) => {
+            const isActive = index === current;
+            const isPrevious = (current + 1) % testimonials.length === index;
 
-            {/* Text Content */}
-            <div className="text-center absolute w-sm top-10 right-20">
-              <h3 className="mt-3 text-lg font-semibold text-gray-900">
-                {testimonials[current].name}
-              </h3>
-              <p className="text-gray-500 mb-5">
-                {testimonials[current].title}
-              </p>
-              <p className="text-gray-600 italic">
-                "{testimonials[current].quote}"
-              </p>
-            </div>
-          </motion.div>
+            return (
+              <motion.div
+                key={index}
+                className={`lg:min-w-3xl lg:min-h-[450px] absolute left-1/2 transform -translate-x-1/2 transition-all duration-400 rounded-lg shadow-lg bg-white p-6  md:w-96 ${
+                  index === 0
+                    ? "z-30 scale-100"
+                    : index === 1
+                    ? "z-20 scale-100 top-12"
+                    : "z-10 scale-90 top-24"
+                }`}
+                initial={{ opacity: 50, scale: 0.9, y: 50 }}
+                animate={{
+                  opacity: isActive ? 1 : 0.5,
+                  scale: isActive ? 1.1 : isPrevious ? 0.95 : 0.9,
+                  y: isActive ? 0 : isPrevious ? 10 : 20,
+                  zIndex: isActive ? 30 : isPrevious ? 20 : 10,
+                }}
+                exit={{ opacity: 0, scale: 0, y: 30 }}
+                transition={{ duration: 0.6 }}
+              >
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="absolute bottom-0 p-0 mb-4"
+                />
+                <p className="text-gray-700 text-lg font-medium">
+                  {testimonial.quote}
+                </p>
+                <p className="mt-4 text-gray-500 font-semibold">
+                  {testimonial.name}
+                </p>
+                <p className="text-gray-400 text-sm">{testimonial.position}</p>
+              </motion.div>
+            );
+          })}
         </AnimatePresence>
       </div>
-
       {/* Navigation Buttons */}
       <button
         onClick={prevTestimonial}

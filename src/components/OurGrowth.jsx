@@ -26,8 +26,8 @@ const growthData = [
 
 function OurGrowth() {
   return (
-    <div className="w-full bg-[#F1F4FF]">
-      <div className="max-w-7xl mx-auto px-2 py-5 gap-3 flex flex-wrap justify-around">
+    <div className="w-full bg-[#F1F4FF] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-5 py-5 gap-3 flex flex-wrap justify-around">
         {growthData.map((growth) => (
           <div key={growth.value} className="flex">
             <h2 className="text-[30] lg:text-[36px] font-bold">
