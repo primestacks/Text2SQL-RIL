@@ -38,7 +38,7 @@ function FAQ() {
   };
 
   return (
-    <div className="py-16 px-6 bg-[#FBFBFB] w-full">
+    <div className="py-10 px-6 bg-[#FBFBFB] w-full">
       {/* Header */}
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-gray-900">
