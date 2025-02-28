@@ -13,19 +13,19 @@ const testimonials = [
   },
   {
     id: 2,
-    image: "./assets/testimonial-one.svg",
-    name: "Becky Nelson",
-    title: "Cloud Engineer",
+    image: "./assets/mark-jackson.svg",
+    name: "Mark Jackson",
+    title: "Business Manager",
     quote:
       "This tool has transformed how we access our data. It's like having a data expert on hand 24/7. We saved hours each week by asking simple questions instead of writing complex queries",
   },
   {
     id: 3,
-    image: "./assets/testimonial-one.svg",
-    name: "Becky Nelson",
+    image: "./assets/testimonial-3.svg",
+    name: "Jenny Robert",
     title: "Cloud Engineer",
     quote:
-      "This tool has transformed how we access our data. It's like having a data expert on hand 24/7. We saved hours each week by asking simple questions instead of writing complex queries",
+      "We saved hours each week by asking simple questions instead of writing complex queries",
   },
 ];
 
@@ -69,15 +69,15 @@ function Testimonial() {
                 key={index}
                 className={`lg:min-w-3xl lg:min-h-1xl mt-0 absolute max-hight-[350px] left-1/2 mb-20 z-0 transform lg:-translate-x-1/2 sm:-translate-x-1/1 transition-all ease-out rounded-lg shadow-lg bg-white  lg:pl-5 lg:pb-90  md:w-96 ${
                   index === 0
-                    ? "z-30 scale-90 top-10"
+                    ? "z-30 scale-100 transition-all ease-in duration-400 top-10"
                     : index === 1
-                    ? "z-20 scale-95 top-25"
-                    : "z-10 scale-100 top-30"
+                    ? "z-20 scale-96 top-25 transition-all ease-in duration-400"
+                    : "z-10 scale-90 top-30 transition-all ease-in duration-400"
                 }`}
-                initial={{ opacity: 100, scale: 0.5, y: 30 }}
+                initial={{ opacity: 100, scale: 0.1, y: 40 }}
                 animate={{
                   opacity: isActive ? 100 : 1,
-                  scale: isActive ? 1.1 : isPrevious ? 0.3 : 0.8,
+                  scale: isActive ? 1.1 : isPrevious ? 0.9 : 0.95,
                   y: isActive ? 0 : isPrevious ? 10 : 20,
                   zIndex: isActive ? 30 : isPrevious ? 20 : 10,
                 }}
