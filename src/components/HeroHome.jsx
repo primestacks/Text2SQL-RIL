@@ -19,7 +19,7 @@ function HeroHome() {
             Trusted by over 1k+ business owner
           </p>
 
-          <h1 className="lg:text-5xl text-3xl md:text-4xl mb-5 my-2 font-bold lg:tracking-wider ">
+          <h1 className="lg:text-5xl text-3xl md:text-4xl mb-5 my-2 font-bold lg:tracking-wider font-primary ">
             Convert Text to SQL With Visualization
           </h1>
           <p>
