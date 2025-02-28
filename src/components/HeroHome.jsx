@@ -1,4 +1,4 @@
-function HeroHome() {
+function Herohome() {
   return (
     <div className="wx-full mt-0 lg:h-screen w-auto flex justify-center items-center lg:min-h-full bg-primary text-white relative overflow-x-hidden">
       <div className="w-full lg:w-7xl flex justify-center items-center group relative  ">
@@ -43,4 +43,4 @@ function HeroHome() {
   );
 }
 
-export default HeroHome;
+export default Herohome;

@@ -4,13 +4,13 @@ import OurGrowth from "../components/OurGrowth";
 import FAQ from "../components/FAQ";
 import Testimonial from "../components/Testimonial";
 import HowItWorks from "../components/HowItWorks";
-import HeroHome from "../components/Herohome";
+import Herohome from "../components/Herohome";
 
 function Landingpage() {
   return (
     <div>
       <Navbar />
-      <HeroHome />
+      <Herohome />
       <OurGrowth />
       <HowItWorks />
       <FAQ />
