@@ -32,6 +32,9 @@ function Footer() {
                   <a href="#">FAQ</a>
                 </li>
               </ul>
+              <div className="flex gap-2">
+                <img src="" alt="" />
+              </div>
             </div>
             <div>
               <ul>
