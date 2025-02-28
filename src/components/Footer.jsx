@@ -1,3 +1,5 @@
+import { Facebook, Twitter, Instagram, Mail } from "lucide-react";
+
 function Footer() {
   return (
     <div className="w-full  bg-primary py-20 max-h-[500px] ">
@@ -11,7 +13,12 @@ function Footer() {
             />
             Text2SQL
           </h1>
-          <h2>Social Icons</h2>
+          <div className="flex space-x-4">
+            <Facebook className="w-7 h-7 p-1 rounded-full text-white border text-center font-bold" />
+            <Twitter className="w-7 h-7 p-1 rounded-full text-white border" />
+            <Instagram className="w-7 h-7 p-1 rounded-full text-white border" />
+            <Mail className="w-7 h-7 p-1 rounded-full text-white border" />
+          </div>
         </div>
         <div className="my grid-cols-1 col-span-2 ">
           {/* Footer menu grid*/}
@@ -32,9 +39,6 @@ function Footer() {
                   <a href="#">FAQ</a>
                 </li>
               </ul>
-              <div className="flex gap-2">
-                <img src="" alt="" />
-              </div>
             </div>
             <div>
               <ul>
