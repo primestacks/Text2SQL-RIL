@@ -40,18 +40,19 @@ function FAQ() {
   return (
     <div className="py-10 px-6 bg-[#FBFBFB] w-full">
       {/* Header */}
-      <div className="max-w-3xl mx-auto text-center">
+      <div className="max-w-md mx-auto text-center">
         <h2 className="text-3xl font-bold text-gray-900">
           Frequently Asked Questions
         </h2>
         <p className="text-gray-600 mt-3">
-          Find answers to the most commonly asked questions below.
+          Find solution to frequently asked question about our Natural Language
+          Query API
         </p>
       </div>
 
       <div className="mt-10 max-w-2xl mx-auto space-y-4">
         {faqsData.map((faq, index) => (
-          <div key={index} className="border  p-2 rounded-2xl my-10">
+          <div key={index} className="border  p-2 rounded-2xl my-7">
             <button
               className="w-full flex justify-between items-center text-lg font-medium text-left text-[#202020]"
               onClick={() => toggleFAQ(index)}

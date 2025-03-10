@@ -52,7 +52,7 @@ function HomeCards() {
             onMouseEnter={() => setIsHovered(true)} // For desktop hover
             onMouseLeave={() => setIsHovered(false)} // For desktop hover out
           >
-            <div className="flex flex-col items-start group-hover:text-[#ffffff] group-hover:border-amber-50 gap-3 lg:gap-5">
+            <div className="flex flex-col items-start group-hover:text-[#f1f4ff] group-hover:border-amber-50 gap-3 lg:gap-5">
               <img src={feature.icon} alt="" />
 
               <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#ffffff]">
