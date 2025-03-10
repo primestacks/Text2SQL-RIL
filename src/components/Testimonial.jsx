@@ -130,7 +130,7 @@ function Testimonial() {
           </AnimatePresence>
         </div>
         {/* Navigation Buttons */}
-        <div className="flex items-start z-50 absolute gap-10 bottom-10 transform lg:transalte-y-1/1 translate-x-30 w-full ">
+        <div className="flex lg:justify-between w-5xl lg:left-30 translate-x-30 lg:translate-x-0 z-50 absolute lg:gap-0 gap-10  lg:bottom-[40%] bottom-10 transform lg:transalte-y-1/1 ">
           <button
             onClick={prevTestimonial}
             className="  p-2 block bg-gray-600 text-white rounded-full shadow-md hover:bg-gray-500"
