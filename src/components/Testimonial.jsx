@@ -91,18 +91,18 @@ function Testimonial() {
                   <motion.img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className={`lg:rounded-lg w-[100px]   sm:w-[170px] md:rounded-2xl lg:w-[240px] md:w-[240px]  bottom-0 p-0 absolute s  ${
+                    className={`lg:rounded-lg relative w-[160px] md:left-5  sm:w-[170px] md:rounded-2xl lg:w-[240px] md:w-[240px]  bottom-0 p-0 md:absolute  ${
                       index === 0
                         ? "z-30 scale-100"
                         : index === 1
-                        ? "z-20 scale-96 b-0 lg:w-[230px] top-[-10%] md:top-[-15%]"
-                        : "z-10 scale-87 lg:w-[200px]  top-[-10%] p-0"
+                        ? "z-20 scale-100 md:scale-96 lg:w-[230px] top-[-10%] md:top-[-15%]"
+                        : "z-10 scale-100 md:scale-87 lg:w-[200px]  top-[-10%] p-0"
                     }`}
                     initial={{ opacity: 100, scale: 0, y: 0 }}
                     animate={{
                       opacity: isActive ? 100 : 0,
                       scale: isActive ? 1 : isPrevious ? 0.55 : 0.55,
-                      y: isActive ? 0 : isPrevious ? 10 : 20,
+                      // y: isActive ? 0 : isPrevious ? 10 : 20,
                       zIndex: isActive ? 30 : isPrevious ? 20 : 10,
                     }}
                     exit={{ opacity: 0, scale: 0, y: 0 }}
@@ -115,17 +115,17 @@ function Testimonial() {
                     <img
                       src="./assets/quotation.svg"
                       alt=""
-                      className="absolute right-10 w-13 lg:top-20 lg:w-[122px] lg:right-10"
+                      className="absolute right-5 top-55 w-13 lg:top-20 lg:w-[122px] lg:right-10"
                     />
 
-                    <div className="px-2 mx-auto text-center bottom-20 absolute md:max-w-[320px] right-10  md:right-10 md:text-left">
+                    <div className="px-2 mx-auto text-center bottom-15 absolute md:max-w-[320px] right-0  md:right-10 md:text-left">
                       <h2 className="text-gray-700 text-3xl font-onest">
                         {testimonial.name}
                       </h2>
                       <p className="mb-5 text-gray-500 font-onest">
                         {testimonial.title}
                       </p>
-                      <p className="text-gray-400 text-sm font-onest">
+                      <p className="text-gray-400 text-sm font-onest px-2">
                         {testimonial.quote}
                       </p>
                     </div>
@@ -139,13 +139,13 @@ function Testimonial() {
         {/* <div className="flex lg:justify-between translate-x-0  sm:translate-x-30 lg:translate-x-0 z-50 absolute lg:gap-0 gap-10  lg:bottom-[40%] bottom-10 transform lg:transalte-y-1/1 "> */}
         <button
           onClick={prevTestimonial}
-          className="p-2 absolute bottom-5 lg:left-35 left-25 md:bottom-[18%] md:left-60 lg:bottom-60 bg-gray-600 text-white rounded-full shadow-md hover:bg-gray-500"
+          className="p-2 absolute bottom-3 lg:left-35 left-25 md:bottom-[18%] md:left-60 lg:bottom-60 bg-gray-600 text-white rounded-full shadow-md hover:bg-gray-500"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
         <button
           onClick={nextTestimonial}
-          className="p-2 absolute bottom-5 lg:right-40 right-25 md:bottom-[18%] md:right-60 lg:bottom-60 bg-gray-600 text-white rounded-full shadow-md hover:bg-gray-500"
+          className="p-2 absolute bottom-3 lg:right-40 right-25 md:bottom-[18%] md:right-60 lg:bottom-60 bg-gray-600 text-white rounded-full shadow-md hover:bg-gray-500"
         >
           <ChevronRight className="w-6 h-6" />
         </button>
