@@ -54,8 +54,12 @@ function Testimonial() {
     <section className="relative min-w-full bg-[#F1F4FF]   px-5 py-10 mx-auto">
       <div className="relative max-w-7xl mx-auto max-h-[400px] pb-[50rem] lg:pb-[40rem]">
         <div className="max-w-sm py-5 my-5 mx-auto text-center">
-          <h1 className="text-3xl font-bold py-3">Testimonials</h1>
-          <p>Real stories from satisfied users, word from our valued users</p>
+          <h1 className="text-3xl py-3 font-onest text-[2.5rem] font-[500]">
+            Testimonials
+          </h1>
+          <p className="font-onest">
+            Real stories from satisfied users, word from our valued users
+          </p>
         </div>
         {/* Testimonials Slider */}
         <div className="mx-auto max-w-1xl">
@@ -67,32 +71,32 @@ function Testimonial() {
               return (
                 <motion.div
                   key={index}
-                  className={`absolute transform lg:translate-x-1/3 lg:left-5 top-40 max-w-4xl  flex flex-col lg:flex-row items-center mx-auto px-0 lg:px-2 py-2 transition-all ease-out rounded-lg shadow-lg bg-white   ${
+                  className={`absolute transform translate-x-1/4 min-w-[350px] min-h-[500px] left-[-90px] lg:translate-x-1/3 lg:left-15 md:translate-x-1/7  md:px-1   md:left-[-50px] md:w-2xl top-55 md:pb-30 pb-40 md:min-h-85 max-w-4xl  flex flex-col md:flex-row items-center mx-auto px-0 lg:px-2 py-2 transition-all ease-in-out rounded-lg shadow-lg bg-white ${
                     index === 0
-                      ? "z-30 scale-90 top-10"
+                      ? "z-30 scale-95 top-0"
                       : index === 1
-                      ? "z-20 scale-90 top-20 "
-                      : "z-10  scale-85 top-25 "
+                      ? "z-20 scale-90 top-0"
+                      : "z-10  scale-90  "
                   }`}
-                  initial={{ opacity: 100, scale: 0, y: 10 }}
+                  initial={{ opacity: 100, scale: 0, y: 5 }}
                   animate={{
-                    opacity: isActive ? 100 : 1,
-                    scale: isActive ? 1.1 : isPrevious ? 0.85 : 0.85,
-                    y: isActive ? 0 : isPrevious ? 10 : 20,
+                    opacity: isActive ? 100 : 10,
+                    scale: isActive ? 1.05 : isPrevious ? 0.99 : 0.99,
+                    y: isActive ? `20px` : isPrevious ? `20px` : `20px`,
                     zIndex: isActive ? 30 : isPrevious ? 20 : 10,
                   }}
-                  exit={{ opacity: 0, scale: 0, y: 0 }}
+                  exit={{ opacity: 0, scale: `[-10%]`, y: 0 }}
                   transition={{ duration: 0.3 }}
                 >
                   <motion.img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className={`lg:rounded-lg w-[200px] rounded-2xl lg:w-[250px] bottom-0 p-0   ${
+                    className={`lg:rounded-lg w-[100px]   sm:w-[170px] md:rounded-2xl lg:w-[240px] md:w-[240px]  bottom-0 p-0 absolute s  ${
                       index === 0
                         ? "z-30 scale-100"
                         : index === 1
-                        ? "z-20 scale-95 b-0 lg:w-[220px] top-[-11%]"
-                        : "z-10 scale-85 lg:w-[200px]  top-[-8%] p-0"
+                        ? "z-20 scale-96 b-0 lg:w-[230px] top-[-10%] md:top-[-15%]"
+                        : "z-10 scale-87 lg:w-[200px]  top-[-10%] p-0"
                     }`}
                     initial={{ opacity: 100, scale: 0, y: 0 }}
                     animate={{
@@ -111,15 +115,17 @@ function Testimonial() {
                     <img
                       src="./assets/quotation.svg"
                       alt=""
-                      className="absolute right-8 w-13 lg:top-30 lg:w-[122px] lg:right-7"
+                      className="absolute right-10 w-13 lg:top-20 lg:w-[122px] lg:right-10"
                     />
 
-                    <div className="px-0 mx-0">
-                      <h2 className="text-gray-700 text-3xl">
+                    <div className="px-2 mx-auto text-center bottom-20 absolute md:max-w-[320px] right-10  md:right-10 md:text-left">
+                      <h2 className="text-gray-700 text-3xl font-onest">
                         {testimonial.name}
                       </h2>
-                      <p className="mb-5 text-gray-500 ">{testimonial.title}</p>
-                      <p className="text-gray-400 text-sm">
+                      <p className="mb-5 text-gray-500 font-onest">
+                        {testimonial.title}
+                      </p>
+                      <p className="text-gray-400 text-sm font-onest">
                         {testimonial.quote}
                       </p>
                     </div>
@@ -130,21 +136,21 @@ function Testimonial() {
           </AnimatePresence>
         </div>
         {/* Navigation Buttons */}
-        <div className="flex lg:justify-between w-5xl lg:left-30 translate-x-30 lg:translate-x-0 z-50 absolute lg:gap-0 gap-10  lg:bottom-[40%] bottom-10 transform lg:transalte-y-1/1 ">
-          <button
-            onClick={prevTestimonial}
-            className="  p-2 block bg-gray-600 text-white rounded-full shadow-md hover:bg-gray-500"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          <button
-            onClick={nextTestimonial}
-            className="  p-2 bg-gray-600 text-white rounded-full shadow-md hover:bg-gray-500"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
-        </div>
+        {/* <div className="flex lg:justify-between translate-x-0  sm:translate-x-30 lg:translate-x-0 z-50 absolute lg:gap-0 gap-10  lg:bottom-[40%] bottom-10 transform lg:transalte-y-1/1 "> */}
+        <button
+          onClick={prevTestimonial}
+          className="p-2 absolute bottom-5 lg:left-35 left-25 md:bottom-[18%] md:left-60 lg:bottom-60 bg-gray-600 text-white rounded-full shadow-md hover:bg-gray-500"
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+        <button
+          onClick={nextTestimonial}
+          className="p-2 absolute bottom-5 lg:right-40 right-25 md:bottom-[18%] md:right-60 lg:bottom-60 bg-gray-600 text-white rounded-full shadow-md hover:bg-gray-500"
+        >
+          <ChevronRight className="w-6 h-6" />
+        </button>
       </div>
+      {/* </div> */}
     </section>
   );
 }
